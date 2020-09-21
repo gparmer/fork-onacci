@@ -4,7 +4,7 @@
 #include <cycles.h>
 
 const int iter = 1000;
-const int N    = 20;
+const int N    = 14;
 
 typedef int (*computation_fn_t)(int);
 
