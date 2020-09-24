@@ -22,9 +22,11 @@ I know, real hard.
 ## Task 2
 
 Use `fork`, `exit`, and `wait` to calculate fib...**fibork!**
-Each "call" to `fibork` should be in a new process.
+Each recursive "call" to `fibork` should be in a new process.
+You should *not* use `fib` in your implementation, and *each call* to `fibork` should result in creating *two* children processes, each of which call `fibork` for the recursive call.
 You'll have to think about how `fork` works to figure out how to pass the argument.
 To "return", you'll need to `exit`, and to pass the return value, the `exit` value will need to percolate to `wait`.
+Note that when `wait(&status)` gets the status from `exit`, you must use `WEXITSTATUS(status)` to access its value.
 
 You can use `man` to figure out how to use these calls appropriately.
 
